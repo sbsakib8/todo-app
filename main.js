@@ -67,7 +67,7 @@ const deleteTodoFromLocalStorage = (id)=> {
 
 // delete todo item end
 // =======================
-// chechedtodo item start
+// checkedtodo item start
 const chechedTodo =(e)=>{
     if(e.target.className === "todo_check"){
         const id = e.target.parentElement.classList[1];
@@ -91,8 +91,35 @@ const chechedTodo =(e)=>{
     }
 };
 
-// // chechedtodo item end
+// // checkedtodo item end
+// +============================
+// editTodo item start
+const editTodo =(e)=>{
+    if(e.target.className === "todo_edit"){
+        const id = e.target.parentElement.classList[1];
+        const todoText = e.target.parentElement.querySelector(".todo_text");
+        if(todoText.disabled){
+            todoText.disabled = false;
+            e.target.textContent = "Save";
+        }else{
+            todoText.disabled = true;
+            e.target.textContent = "Edit";
+            editTodoInLocalstorage(id,todoText.value);
+        }
+    }
+};
 
+const editTodoInLocalstorage = (id ,todo)=>{
+     let tasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks = tasks.map(task =>{
+        if(task.id === parseInt(id) ){
+          task.todo = todo;
+        }
+        return task ;
+    });  
+    localStorage.setItem("tasks", JSON.stringify(tasks));  
+}
+// editTodo item end
 
 
 
