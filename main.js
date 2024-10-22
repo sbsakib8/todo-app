@@ -64,3 +64,18 @@ const deleteTodoFromLocalStorage = (id)=> {
     tasks = tasks.filter((task) => task.id !== parseInt(id));
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
+
+
+
+
+
+
+
+
+// event listeners 
+todoForm.addEventListener("submit",addTodo);
+todoOutput.addEventListener("click",deleteTodo);
+todoOutput.addEventListener("click",chechedTodo);
+todoOutput.addEventListener("click",editTodo);
+document.addEventListener("DOMContentLoaded",getTodo);
+searchInput.addEventListener("keyup",searchTodo);
