@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    body{
+        @apply bg-[#672682] text-white flex justify-center text-center;
+    }
+}
+
+@layer utilities{
+    .container{
+        @apply mt-12 lg:m-10 bg-[#3498db] py-8 px-20 rounded-2xl shadow-2xl;
+    }
+
+    .heading{
+        @apply font-bold text-4xl mb-6;
+    }
+
+    .todo_form{
+        @apply flex flex-col justify-center items-center mb-5;
+    }
+
+    .todo_input,.search_input{
+        @apply w-full py-2 px-4 border-none rounded-lg text-xl mb-4 outline-none text-black ;
+    }
+
+    .todo_button{
+        @apply py-2 px-4 border-none rounded-lg text-xl bg-[#2c3e50] text-white cursor-pointer outline-none w-full hover:bg-black;
+    }
+
+    .todo_output{
+        @apply flex flex-col mt-2 justify-center items-center max-h-52 overflow-auto;
+    }
+
+    .todo_item{
+        @apply w-full py-2 px-4  text-xl rounded-lg mb-4 text-white flex justify-between items-center;
+    }
+
+    .todo_check{
+        @apply cursor-pointer w-6 h-6 border-none outline-none;
+    }
+
+    .todo_text{
+        @apply text-xl font-bold mr-3 ml-3 mt-4 bg-white text-black py-2 px-4 border-none rounded-[50px] outline-none;
+    }
+ 
+    .todo_edit,.todo_delete{
+        @apply cursor-pointer py-2 px-4 text-sm rounded-[50px] bg-yellow-400 text-black border-none outline-none mr-3 ml-3 hover:bg-black hover:text-white;
+    }
+    .todo_delete{
+        @apply bg-red-600;
+    }
+    .strike{
+        @apply line-through;
+    }
+}
