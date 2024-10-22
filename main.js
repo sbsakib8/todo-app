@@ -65,7 +65,33 @@ const deleteTodoFromLocalStorage = (id)=> {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+// delete todo item end
+// =======================
+// chechedtodo item start
+const chechedTodo =(e)=>{
+    if(e.target.className === "todo_check"){
+        const id = e.target.parentElement.classList[1];
+        const checked = e.target.checked;
 
+        if(checked){
+            e.target.nextElementSibling.style.textDecoration = "line-through";
+
+        }else{
+            e.target.nextElementSibling.style.textDecoration = "none";
+        }
+
+        let tasks = JSON.parse(localStorage.getItem("tasks"));
+        tasks = tasks.map(task => {
+            if(task.id === parseInt(id)){
+                task.completed = checked;
+            }
+            return task;
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+};
+
+// // chechedtodo item end
 
 
 
