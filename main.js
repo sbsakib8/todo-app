@@ -120,7 +120,23 @@ const editTodoInLocalstorage = (id ,todo)=>{
     localStorage.setItem("tasks", JSON.stringify(tasks));  
 }
 // editTodo item end
+// ========================
+// searchTodo item start
 
+const searchTodo =(e)=>{
+    const searchText = e.target.value.toLowerCase();
+    const todoItems = document.querySelectorAll(".todo_item");
+    todoItems.forEach(todoItem =>{
+        const todo = todoItem.querySelector(".todo_text").value.toLowerCase();
+        if(todo.indexOf(searchText) !== -1){
+            todoItem.style.display = "flex";
+        }else{
+            todoItem.style.display = "none";
+        }
+    })
+};
+
+// searchTodo item end
 
 
 
