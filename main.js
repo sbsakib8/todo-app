@@ -50,4 +50,17 @@ const getTodo =(e)=>{
      })
     }
 };
-// addtodo item start
+// addtodo item end
+// ========================
+// delete todo item start
+const deleteTodo = (e) => {
+    if(e.target.className === "todo_delete"){
+        deleteTodoFromLocalStorage(e.target.parentElement.classList[1]);
+        e.target.parentElement.remove();
+    }
+};
+const deleteTodoFromLocalStorage = (id)=> {
+    let tasks = JSON.parse(localStorage.getItem("tasks"));
+    tasks = tasks.filter((task) => task.id !== parseInt(id));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
