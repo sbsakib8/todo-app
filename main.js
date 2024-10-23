@@ -138,9 +138,6 @@ const searchTodo =(e)=>{
 
 // searchTodo item end
 
-
-
-
 // event listeners 
 todoForm.addEventListener("submit",addTodo);
 todoOutput.addEventListener("click",deleteTodo);
