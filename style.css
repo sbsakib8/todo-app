@@ -5,13 +5,13 @@
 
 @layer base{
     body{
-        @apply bg-[#672682] text-white flex justify-center text-center;
+        @apply bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white flex justify-center text-center;
     }
 }
 
 @layer utilities{
     .container{
-        @apply mt-12 lg:m-10 bg-[#3498db] py-8 px-20 rounded-2xl shadow-2xl;
+        @apply mt-12 lg:m-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-8 px-20 rounded-2xl shadow-2xl;
     }
 
     .heading{
