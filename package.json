@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+   "build":"tailwindcss -i style.css -o ./css/style.min.css --minify"
   },
   "keywords": [],
   "author": "",
